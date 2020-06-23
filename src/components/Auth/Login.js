@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useFormValidation from "./useFormValidation";
 import { Link } from "react-router-dom";
+import validateLogin from './validateLogin'
 
 const INITIAL_STATE = {
   name: "",
@@ -10,7 +11,8 @@ const INITIAL_STATE = {
 
 function Login(props) {
   const { handleChange, handleSubmit, values } = useFormValidation(
-    INITIAL_STATE
+    INITIAL_STATE,
+    validateLogin
   );
   const [login, setLogin] = useState(true);
 

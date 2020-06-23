@@ -7,33 +7,33 @@ function Header() {
       <div className="w-48">
         <img src="/logo.png" alt="" />
       </div>
-      <div className="flex justify-between space-x-5 text-green-600 uppercase ">
+      <div className="flex justify-between space-x-5 text-green-900 font-bold uppercase ">
         <NavLink
-          className="hover:text-green-900 transition duration-500"
+          className="hover:text-green-400 transition duration-500"
           to="/"
         >
           Recipes
         </NavLink>
         <NavLink
-          className="hover:text-green-900 transition duration-500"
+          className="hover:text-green-400 transition duration-500"
           to="/"
         >
           New
         </NavLink>
         <NavLink
-          className="hover:text-green-900 transition duration-500"
+          className="hover:text-green-400 transition duration-500"
           to="/top"
         >
           Top
         </NavLink>
         <NavLink
-          className="hover:text-green-900 transition duration-500"
+          className="hover:text-green-400 transition duration-500"
           to="/search"
         >
           Search
         </NavLink>
         <NavLink
-          className="hover:text-green-900 transition duration-500"
+          className="hover:text-green-400 transition duration-500"
           to="/create"
         >
           Create
@@ -41,7 +41,7 @@ function Header() {
       </div>
       <div className="uppercase text-green-600">
         <NavLink
-          className="hover:text-green-900 transition duration-500  "
+          className="hover:text-green-400 text-green-900 font-bold transition duration-500  "
           to="/login"
         >
           Login

@@ -1,10 +1,25 @@
 import React, { useState } from "react";
+import useFormValidation from "./useFormValidation";
+import { Link } from "react-router-dom";
+
+const INITIAL_STATE = {
+  name: "",
+  email: "",
+  password: "",
+};
 
 function Login(props) {
+  const { handleChange, handleSubmit, values } = useFormValidation(
+    INITIAL_STATE
+  );
   const [login, setLogin] = useState(true);
+
   return (
     <div className="bg-gray-100 flex items-center justify-center w-screen h-screen">
-      <form className="bg-white shadow-md rounded px-8  w-1/3 py-24 mb-4">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-md rounded px-8  w-1/3 py-24 mb-4"
+      >
         <h2 className="text-center uppercase text-4xl text-gray-600 mb-5">
           {login ? "Login" : "Create Account"}
         </h2>
@@ -12,22 +27,25 @@ function Login(props) {
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
-              for="username"
+              htmlFor="username"
             >
               Name
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
+              id="name"
               type="text"
-              placeholder="Username"
+              placeholder="Name"
+              name="name"
+              value={values.name}
+              onChange={handleChange}
             />
           </div>
         )}
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            for="username"
+            htmlFor="username"
           >
             Email
           </label>
@@ -35,13 +53,16 @@ function Login(props) {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="username"
             type="email"
+            name="email"
+            value={values.email}
             placeholder="Email"
+            onChange={handleChange}
           />
         </div>
         <div className="mb-6">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"
-            for="password"
+            htmlFor="password"
           >
             Password
           </label>
@@ -49,28 +70,31 @@ function Login(props) {
             className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="password"
             type="password"
+            value={values.password}
+            name="password"
             placeholder="******************"
+            onChange={handleChange}
           />
         </div>
 
         <div className="flex flex-col items-center space-y-4 justify-between">
-          <a
+          <Link
             className="block text-center font-bold text-sm text-green-500 hover:text-green-800 mt-5"
             type="button"
             onClick={() => setLogin((prevLogin) => !prevLogin)}
-            href="#"
+            to="#"
           >
             {login ? "Need to create an account?" : "Already have an account?"}
-          </a>
-          <a
+          </Link>
+          <Link
             className="inline-block align-baseline font-bold text-sm text-green-500 hover:text-green-800"
-            href="#"
+            to="#"
           >
             Forgot Password?
-          </a>
+          </Link>
           <button
             className="bg-green-500 hover:bg-green-700 text-white font-bold w-1/3 py-2 rounded focus:outline-none focus:shadow-outline"
-            type="button"
+            type="submit"
           >
             {login ? "Login" : "Register"}
           </button>

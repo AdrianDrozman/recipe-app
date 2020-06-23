@@ -24,9 +24,8 @@ function App() {
             <Route path="/new/:page" component={RecipeList} />
             <Route path="/recipe/:recipeId" component={RecipeDetail} />
           </div>
-            <Route path="/login" component={Login} />
+          <Route path="/login" component={Login} />
         </div>
-       
       </Switch>
     </BrowserRouter>
   );

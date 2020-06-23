@@ -69,7 +69,9 @@ function Login(props) {
             placeholder="Email"
             onChange={handleChange}
           />
-          {errors.email && <p className="text-red-600 font-bold">{errors.email}</p>}
+          {errors.email && (
+            <p className="text-red-600 font-bold">{errors.email}</p>
+          )}
         </div>
         <div className="mb-6">
           <label
@@ -90,14 +92,18 @@ function Login(props) {
             onBlur={handleBlur}
             onChange={handleChange}
           />
-          {errors.password && <p className="text-red-600 font-bold">{errors.password}</p>}
+          {errors.password && (
+            <p className="text-red-600 font-bold">{errors.password}</p>
+          )}
         </div>
 
         <div className="flex flex-col items-center space-y-4 justify-between">
           <Link
             className="block text-center font-bold text-sm text-green-500 hover:text-green-800 mt-5"
             type="button"
-            onClick={() => {setLogin((prevLogin) => !prevLogin)}}
+            onClick={() => {
+              setLogin((prevLogin) => !prevLogin);
+            }}
             to="#"
           >
             {login ? "Need to create an account?" : "Already have an account?"}

@@ -3,7 +3,7 @@ import { withRouter, NavLink } from "react-router-dom";
 
 function Header() {
   return (
-    <div className="h-20 items-center mx-auto p-10   flex justify-between text-2xl bg-green-200">
+    <div className="h-20 items-center mx-auto p-10 flex justify-between text-2xl bg-white">
       <div className="w-48">
         <img src="/logo.png" alt="" />
       </div>
